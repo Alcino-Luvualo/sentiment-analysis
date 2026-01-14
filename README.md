@@ -81,7 +81,7 @@ A aplicação possui uma interface moderna com design glassmorphism:
 
 1. **Clone o repositório**
 ```bash
-git clone https://github.com/seu-usuario/sentiment-analysis.git
+git clone https://github.com/alcino-luvualo/sentiment-analysis.git
 cd sentiment-analysis
 ```
 
