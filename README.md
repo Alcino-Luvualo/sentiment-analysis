@@ -9,131 +9,131 @@
 </p>
 
 <p align="center">
-  <b>Uma aplicação web moderna para análise de sentimentos usando Processamento de Linguagem Natural (NLP)</b>
+  <b>A modern web application for sentiment analysis using Natural Language Processing (NLP)</b>
 </p>
 
 <p align="center">
   <a href="#-features">Features</a> •
   <a href="#-demo">Demo</a> •
-  <a href="#-instalação">Instalação</a> •
-  <a href="#-como-usar">Como Usar</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-usage">Usage</a> •
   <a href="#-api">API</a> •
-  <a href="#-como-funciona">Como Funciona</a>
+  <a href="#-how-it-works">How It Works</a>
 </p>
 
 ---
 
 ## ✨ Features
 
-| Feature | Descrição |
-|---------|-----------|
-| 🔍 **Análise de Sentimentos** | Classifica textos como Positivo, Negativo ou Neutro |
-| 🌐 **Interface Web Moderna** | Design responsivo com gradientes e animações |
-| 🚀 **API REST** | Endpoint simples para integração |
-| 🧪 **Testes Automatizados** | Cobertura completa com unittest |
-| 📊 **Pontuação de Polaridade** | Retorna score entre -1.0 e +1.0 |
-| 🛡️ **Tratamento de Erros** | Validação robusta de entradas |
-| 🇧🇷 **Suporte Português** | Resultados traduzidos para PT-BR |
+| Feature | Description |
+|---------|-------------|
+| 🔍 **Sentiment Analysis** | Classifies text as Positive, Negative, or Neutral |
+| 🌐 **Modern Web Interface** | Responsive design with gradients and animations |
+| 🚀 **REST API** | Simple endpoint for integration |
+| 🧪 **Automated Tests** | Full coverage with unittest |
+| 📊 **Polarity Score** | Returns score between -1.0 and +1.0 |
+| 🛡️ **Error Handling** | Robust input validation |
+| 🇧🇷 **Portuguese Support** | Results translated to PT-BR |
 
 ---
 
 ## 🎬 Demo
 
-### Interface Web
+### Web Interface
 
-A aplicação possui uma interface moderna com design glassmorphism:
+The application features a modern interface with glassmorphism design:
 
 ```
 ┌─────────────────────────────────────────────┐
 │           🎭 Sentiment Analyzer             │
-│      Análise de Sentimentos com TextBlob    │
+│     Sentiment Analysis using TextBlob       │
 │                                             │
 │  ┌─────────────────────────────────────┐    │
 │  │ I love working with Python!        │    │
 │  └─────────────────────────────────────┘    │
 │                                             │
-│         [🔍 Analisar Sentimento]            │
+│         [🔍 Analyze Sentiment]              │
 │                                             │
 │  ┌─────────────────────────────────────┐    │
-│  │ ✅ POSITIVO - Score: 0.5           │    │
+│  │ ✅ POSITIVE - Score: 0.5           │    │
 │  └─────────────────────────────────────┘    │
 └─────────────────────────────────────────────┘
 ```
 
-### Exemplos de Análise
+### Analysis Examples
 
-| Texto | Classificação | Score |
-|-------|---------------|-------|
-| "I love this product!" | 😊 POSITIVO | +0.50 |
-| "This is terrible" | 😠 NEGATIVO | -0.80 |
-| "The meeting is at 3pm" | 😐 NEUTRO | 0.00 |
+| Text | Classification | Score |
+|------|----------------|-------|
+| "I love this product!" | 😊 POSITIVE | +0.50 |
+| "This is terrible" | 😠 NEGATIVE | -0.80 |
+| "The meeting is at 3pm" | 😐 NEUTRAL | 0.00 |
 
 ---
 
-## 📦 Instalação
+## 📦 Installation
 
-### Pré-requisitos
+### Prerequisites
 
-- Python 3.11 ou superior
-- pip (gerenciador de pacotes Python)
+- Python 3.11 or higher
+- pip (Python package manager)
 
-### Passo a Passo
+### Step by Step
 
-1. **Clone o repositório**
+1. **Clone the repository**
 ```bash
 git clone https://github.com/alcino-luvualo/sentiment-analysis.git
 cd sentiment-analysis
 ```
 
-2. **Crie um ambiente virtual**
+2. **Create a virtual environment**
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # Linux/Mac
-# ou
+# or
 .\venv\Scripts\activate   # Windows
 ```
 
-3. **Instale as dependências**
+3. **Install dependencies**
 ```bash
 pip install textblob flask pylint requests
 ```
 
-4. **Baixe os corpora do TextBlob**
+4. **Download TextBlob corpora**
 ```bash
 python -m textblob.download_corpora
 ```
 
-5. **Execute a aplicação**
+5. **Run the application**
 ```bash
 python server.py
 ```
 
-6. **Acesse no navegador**
+6. **Open in browser**
 ```
 http://localhost:5000
 ```
 
-> ⚠️ **Nota:** Se a porta 5000 estiver em uso (comum no macOS), use: `flask --app server run --port 5001`
+> ⚠️ **Note:** If port 5000 is in use (common on macOS), use: `flask --app server run --port 5001`
 
 ---
 
-## 🚀 Como Usar
+## 🚀 Usage
 
-### Via Interface Web
+### Via Web Interface
 
-1. Abra o navegador em `http://localhost:5000`
-2. Digite um texto no campo de entrada
-3. Clique em **"Analisar Sentimento"**
-4. Veja o resultado com a classificação e pontuação
+1. Open your browser at `http://localhost:5000`
+2. Enter text in the input field
+3. Click **"Analyze Sentiment"**
+4. View the result with classification and score
 
 ### Via API
 
 ```bash
-# Requisição GET
+# GET Request
 curl "http://localhost:5000/sentimentAnalyzer?textToAnalyze=I%20love%20Python"
 
-# Resposta
-O texto fornecido foi identificado como POSITIVO com uma pontuação de 0.5.
+# Response
+The provided text was identified as POSITIVE with a score of 0.5.
 ```
 
 ### Via Python
@@ -141,12 +141,12 @@ O texto fornecido foi identificado como POSITIVO com uma pontuação de 0.5.
 ```python
 from SentimentAnalysis import sentiment_analyzer
 
-# Analisar um texto
+# Analyze a text
 result = sentiment_analyzer("I love working with Python")
 print(result)
 # {'label': 'SENT_POSITIVE', 'score': 0.5}
 
-# Texto negativo
+# Negative text
 result = sentiment_analyzer("I hate bugs")
 print(result)
 # {'label': 'SENT_NEGATIVE', 'score': -0.8}
@@ -158,50 +158,50 @@ print(result)
 
 ### Endpoints
 
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| `GET` | `/` | Página principal (interface web) |
-| `GET` | `/sentimentAnalyzer` | Analisa o sentimento de um texto |
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/` | Home page (web interface) |
+| `GET` | `/sentimentAnalyzer` | Analyzes the sentiment of a text |
 
-### Parâmetros
+### Parameters
 
-| Parâmetro | Tipo | Descrição |
-|-----------|------|-----------|
-| `textToAnalyze` | `string` | Texto a ser analisado |
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `textToAnalyze` | `string` | Text to be analyzed |
 
-### Resposta
+### Response
 
 ```json
 {
   "label": "SENT_POSITIVE | SENT_NEGATIVE | SENT_NEUTRAL",
-  "score": -1.0 a 1.0
+  "score": -1.0 to 1.0
 }
 ```
 
 ---
 
-## 🧠 Como Funciona
+## 🧠 How It Works
 
-### Arquitetura
+### Architecture
 
 ```
 ┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
-│   Interface Web  │────▶│   Flask Server   │────▶│    TextBlob      │
+│   Web Interface  │────▶│   Flask Server   │────▶│    TextBlob      │
 │   (HTML/JS/CSS)  │     │   (server.py)    │     │  (NLP Engine)    │
 └──────────────────┘     └──────────────────┘     └──────────────────┘
          │                        │                        │
          ▼                        ▼                        ▼
-    Input do Usuário       Processa Request        Analisa Sentimento
+    User Input            Process Request         Analyze Sentiment
 ```
 
-### Algoritmo de Análise
+### Analysis Algorithm
 
-O TextBlob usa um **classificador Naive Bayes** treinado com o corpus de críticas de filmes:
+TextBlob uses a **Naive Bayes classifier** trained with the movie reviews corpus:
 
-1. **Tokenização** - Quebra o texto em palavras
-2. **Lookup Léxico** - Busca polaridade de cada palavra
-3. **Média Ponderada** - Calcula polaridade final
-4. **Classificação** - Aplica thresholds
+1. **Tokenization** - Breaks the text into words
+2. **Lexicon Lookup** - Looks up polarity of each word
+3. **Weighted Average** - Calculates final polarity
+4. **Classification** - Applies thresholds
 
 ```python
 if polarity > 0.1:
@@ -212,48 +212,48 @@ else:
     label = "SENT_NEUTRAL"    # 😐
 ```
 
-### Escala de Polaridade
+### Polarity Scale
 
 ```
-Negativo ◄─────────────────────────────────────────► Positivo
+Negative ◄─────────────────────────────────────────► Positive
    -1.0        -0.5        0.0        +0.5        +1.0
     │           │           │           │           │
-  Muito      Negativo    Neutro    Positivo     Muito
- Negativo                                      Positivo
+  Very       Negative    Neutral    Positive      Very
+ Negative                                       Positive
 ```
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 sentiment-analysis/
-├── 📂 SentimentAnalysis/           # Pacote Python
-│   ├── __init__.py                 # Exporta sentiment_analyzer
-│   └── sentiment_analysis.py       # Função de análise
-├── 📂 templates/                   # Templates HTML
-│   └── index.html                  # Interface web
-├── 📂 static/                      # Arquivos estáticos
-│   └── mywebscript.js              # JavaScript do frontend
-├── 📂 venv/                        # Ambiente virtual
-├── server.py                       # Servidor Flask
-├── test_sentiment_analysis.py      # Testes unitários
-├── .gitignore                      # Arquivos ignorados pelo Git
-├── LICENSE                         # Licença do projeto
-└── README.md                       # Este arquivo
+├── 📂 SentimentAnalysis/           # Python package
+│   ├── __init__.py                 # Exports sentiment_analyzer
+│   └── sentiment_analysis.py       # Analysis function
+├── 📂 templates/                   # HTML templates
+│   └── index.html                  # Web interface
+├── 📂 static/                      # Static files
+│   └── mywebscript.js              # Frontend JavaScript
+├── 📂 venv/                        # Virtual environment
+├── server.py                       # Flask server
+├── test_sentiment_analysis.py      # Unit tests
+├── .gitignore                      # Git ignored files
+├── LICENSE                         # Project license
+└── README.md                       # This file
 ```
 
 ---
 
-## 🧪 Testes
+## 🧪 Tests
 
-### Executar Testes
+### Run Tests
 
 ```bash
 python test_sentiment_analysis.py
 ```
 
-### Resultado Esperado
+### Expected Result
 
 ```
 ......
@@ -263,20 +263,20 @@ Ran 6 tests in 0.020s
 OK
 ```
 
-### Cobertura de Testes
+### Test Coverage
 
-| Teste | Descrição |
-|-------|-----------|
-| `test_positive_sentiment` | Verifica análise de texto positivo |
-| `test_negative_sentiment` | Verifica análise de texto negativo |
-| `test_neutral_sentiment` | Verifica análise de texto neutro |
-| `test_empty_input` | Verifica tratamento de entrada vazia |
-| `test_whitespace_input` | Verifica entrada apenas com espaços |
-| `test_none_input` | Verifica entrada None |
+| Test | Description |
+|------|-------------|
+| `test_positive_sentiment` | Verifies positive text analysis |
+| `test_negative_sentiment` | Verifies negative text analysis |
+| `test_neutral_sentiment` | Verifies neutral text analysis |
+| `test_empty_input` | Verifies empty input handling |
+| `test_whitespace_input` | Verifies whitespace-only input |
+| `test_none_input` | Verifies None input handling |
 
 ---
 
-## 📊 Qualidade de Código
+## 📊 Code Quality
 
 ### Pylint Score
 
@@ -290,39 +290,39 @@ pylint SentimentAnalysis/sentiment_analysis.py
 
 ---
 
-## 🔧 Tecnologias
+## 🔧 Technologies
 
-| Tecnologia | Uso |
-|------------|-----|
-| ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) | Linguagem principal |
-| ![Flask](https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white) | Framework web |
-| ![TextBlob](https://img.shields.io/badge/-TextBlob-yellow) | Motor de NLP |
-| ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white) | Estrutura da interface |
-| ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white) | Estilização |
-| ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black) | Interatividade |
-
----
-
-## 🆚 Comparação: TextBlob vs Watson
-
-| Aspecto | TextBlob | Watson NLU |
-|---------|----------|------------|
-| 💰 **Custo** | Gratuito | Pago |
-| 🌐 **Internet** | Offline | Requer conexão |
-| 🎯 **Precisão** | Média (Naive Bayes) | Alta (BERT/Transformers) |
-| ⚡ **Velocidade** | Muito rápido | Mais lento (API) |
-| 📦 **Instalação** | `pip install textblob` | SDK + API Key |
-| 🔒 **Privacidade** | Local | Dados enviados à IBM |
+| Technology | Usage |
+|------------|-------|
+| ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) | Main language |
+| ![Flask](https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white) | Web framework |
+| ![TextBlob](https://img.shields.io/badge/-TextBlob-yellow) | NLP engine |
+| ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white) | Interface structure |
+| ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white) | Styling |
+| ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black) | Interactivity |
 
 ---
 
-## 📄 Licença
+## 🆚 Comparison: TextBlob vs Watson
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+| Aspect | TextBlob | Watson NLU |
+|--------|----------|------------|
+| 💰 **Cost** | Free | Paid |
+| 🌐 **Internet** | Offline | Requires connection |
+| 🎯 **Accuracy** | Medium (Naive Bayes) | High (BERT/Transformers) |
+| ⚡ **Speed** | Very fast | Slower (API) |
+| 📦 **Installation** | `pip install textblob` | SDK + API Key |
+| 🔒 **Privacy** | Local | Data sent to IBM |
 
 ---
 
-## 👨‍💻 Autor
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👨‍💻 Author
 
 **Alcino Luvualo**
 
@@ -331,14 +331,14 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ---
 
-## 🙏 Agradecimentos
+## 🙏 Acknowledgments
 
-- [TextBlob](https://textblob.readthedocs.io/) - Biblioteca de NLP
-- [Flask](https://flask.palletsprojects.com/) - Micro framework web
+- [TextBlob](https://textblob.readthedocs.io/) - NLP Library
+- [Flask](https://flask.palletsprojects.com/) - Micro web framework
 - [NLTK](https://www.nltk.org/) - Natural Language Toolkit
 
 ---
 
 <p align="center">
-  Feito com ❤️ e ☕ | 2026
+  Made with ❤️ and ☕ | 2026
 </p>
