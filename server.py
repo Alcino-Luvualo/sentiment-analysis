@@ -1,28 +1,57 @@
-''' Executing this function initiates the application of sentiment
-    analysis to be executed over the Flask channel and deployed on
-    localhost:5000.
-'''
-# Import Flask, render_template, request from the flask pramework package : TODO
-# Import the sentiment_analyzer function from the package created: TODO
+"""
+Módulo servidor para análise de sentimentos.
 
-#Initiate the flask app : TODO
+Este módulo implementa um servidor Flask que fornece uma interface web
+para análise de sentimentos usando TextBlob.
+"""
 
-@app.route("/sentimentAnalyzer")
-def sent_analyzer():
-    ''' This code receives the text from the HTML interface and 
-        runs sentiment analysis over it using sentiment_analysis()
-        function. The output returned shows the label and its confidence 
-        score for the provided text.
-    '''
-    # TODO
+from flask import Flask, render_template, request
+from SentimentAnalysis import sentiment_analyzer
 
-@app.route("/")
+app = Flask(__name__,
+            template_folder='templates',
+            static_folder='static')
+
+
+@app.route('/')
 def render_index_page():
-    ''' This function initiates the rendering of the main application
-        page over the Flask channel
-    '''
-    #TODO
+    """Renderiza a página principal (index.html)."""
+    return render_template('index.html')
 
-if __name__ == "__main__":
-    ''' This functions executes the flask app and deploys it on localhost:5000
-    '''#TODO
+
+@app.route('/sentimentAnalyzer')
+def sent_analyzer():
+    """
+    Processa a requisição GET e retorna a análise de sentimento.
+
+    Espera receber um parâmetro 'textToAnalyze' na URL.
+
+    Returns:
+        str: Mensagem com resultado da análise ou erro
+    """
+    text_to_analyze = request.args.get('textToAnalyze', '')
+
+    if not text_to_analyze or text_to_analyze.strip() == '':
+        return "Por favor, digite um texto para analisar!"
+
+    result = sentiment_analyzer(text_to_analyze)
+
+    if result['label'] is None:
+        return "Entrada inválida! Tente novamente."
+
+    label = result['label']
+    score = result['score']
+
+    label_translation = {
+        "SENT_POSITIVE": "POSITIVO",
+        "SENT_NEGATIVE": "NEGATIVO",
+        "SENT_NEUTRAL": "NEUTRO"
+    }
+
+    label_pt = label_translation.get(label, label)
+
+    return f"O texto fornecido foi identificado como {label_pt} com uma pontuação de {score}."
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
